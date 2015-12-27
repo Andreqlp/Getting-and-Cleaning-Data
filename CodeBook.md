@@ -1,6 +1,6 @@
-Project: Getting and Cleaning Data (Course Project)
+PROJECT: Getting and Cleaning Data (Course Project)
 
-Variables:
+VARIABLES:
 1	subjectID
 2	activityID
 3	tBodyAcc-mean()-X
@@ -88,7 +88,22 @@ Variables:
 85	angle(tBodyGyroJerkMean,gravityMean)
 86	angle(X,gravityMean)
 
-Stages to clean up the data:
+
+DATA:
+The data from collected to "Human Activity Recognition Using Smartphones Data Set" (link: http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones).
+
+The experiments have been carried out with a group of 30 volunteers within an age bracket of 19-48 years. Each person performed six activities (WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING) wearing a smartphone (Samsung Galaxy S II) on the waist. Using its embedded accelerometer and gyroscope, we captured 3-axial linear acceleration and 3-axial angular velocity at a constant rate of 50Hz. The experiments have been video-recorded to label the data manually. The obtained dataset has been randomly partitioned into two sets, where 70% of the volunteers was selected for generating the training data and 30% the test data. 
+
+The sensor signals (accelerometer and gyroscope) were pre-processed by applying noise filters and then sampled in fixed-width sliding windows of 2.56 sec and 50% overlap (128 readings/window). The sensor acceleration signal, which has gravitational and body motion components, was separated using a Butterworth low-pass filter into body acceleration and gravity. The gravitational force is assumed to have only low frequency components, therefore a filter with 0.3 Hz cutoff frequency was used. From each window, a vector of features was obtained by calculating variables from the time and frequency domain. See 'features_info.txt' for more details. 
+
+Link to data base:
+http://archive.ics.uci.edu/ml/machine-learning-databases/00240/UCI%20HAR%20Dataset.zip
+
+Link to data base description:
+http://archive.ics.uci.edu/ml/machine-learning-databases/00240/UCI%20HAR%20Dataset.names
+
+
+STAGES TO CLEAN UP:
 1) Merges the files subject_train.txt, Y_train.txt, X_train.txt, subject_test.txt, Y_test.txt and X_test.txt to create one data set.
 
 2) The files subject_train.txt and subject_test.txt were put together in one variable with label"subjectID". The files Y_train.txt and Y_test.txt were put together in one varible with label "activityID". The files X_train.txt and X_test.txt, with 561 variables initially, were put together and labeled with the features.txt file. 
