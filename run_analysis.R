@@ -14,7 +14,7 @@ trainSubject <- read.table("./data/UCI HAR Dataset/train/subject_train.txt")
 trainX <- read.table("./data/UCI HAR Dataset/train/X_train.txt")
 trainY <- read.table("./data/UCI HAR Dataset/train/Y_train.txt")
 
-# Join the variables of training.
+# Merge the variables of training.
 trainTotal <- cbind(trainX, trainY, trainSubject)
 
 # Load the test data.
@@ -22,10 +22,10 @@ testSubject <- read.table("./data/UCI HAR Dataset/test/subject_test.txt")
 testX <- read.table("./data/UCI HAR Dataset/test/X_test.txt")
 testY <- read.table("./data/UCI HAR Dataset/test/Y_test.txt")
 
-# Join the variables of the test.
+# Merge the variables of the test.
 testTotal <- cbind(testX, testY, testSubject)
 
-# Join the cases of the training and testing data.
+# Merge the cases of the training and testing data.
 dataTotal <- rbind(trainTotal, testTotal)
 
 
@@ -63,7 +63,7 @@ dataSubject <- rbind(trainSubject, testSubject)
 colnames(dataSubject) <- "subjectID"
 colnames(dataXMainStd) <- features[featuresSearch,2]
 
-# Join data variables, status and identification in a single vector.
+# Merge data variables, status and identification in a single vector.
 dataMainStd <- cbind(dataXMainStd, dataY, dataSubject)
 
 
@@ -71,8 +71,7 @@ dataMainStd <- cbind(dataXMainStd, dataY, dataSubject)
 # 5. From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject.
 # Load the library plyr and create average of each variable for each activity and each subject
 library(plyr)
-dataAverage <- ddply(dataMainStd, .(subjectID, activityID), 
-                     function(x) colMeans(x[, 1:84]))
+dataAverage <- ddply(dataMainStd, .(subjectID, activityID), function(x) colMeans(x[, 1:84]))
 
 # Create a new file named tidyAvarage.txt
 write.table(dataAverage, file = "./data/tidyAverage.txt", row.name=FALSE)
