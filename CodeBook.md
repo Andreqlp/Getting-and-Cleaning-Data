@@ -87,3 +87,21 @@ Variables:
 84	angle(tBodyGyroMean,gravityMean)
 85	angle(tBodyGyroJerkMean,gravityMean)
 86	angle(X,gravityMean)
+
+Stages to clean up the data:
+1) Merges the files subject_train.txt, Y_train.txt, X_train.txt, subject_test.txt, Y_test.txt and X_test.txt to create one data set.
+
+2) The files subject_train.txt and subject_test.txt were put together in one variable with label"subjectID". The files Y_train.txt and Y_test.txt were put together in one varible with label "activityID". The files X_train.txt and X_test.txt, with 561 variables initially, were put together and labeled with the features.txt file. 
+
+3) The variables "subjectID", "activityID",  and more the measurements on the mean and standard deviation for each measurement were selected.
+
+4) Was created a tidy data set with the average of each variable for each activity and each subject.
+
+The new data set have 86 variables, where:
+First variable identifies the subject who performed the activity for each window sample. Its range is from 1 to 30. 
+Second variable identifies the activities names (WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING) 
+3 to 86 variables are data sets with mean and standard deviation.
+
+And have 10.299 observations, where: 
+1 to 7352 are volunteers was selected for generating the training data
+7.353 to 10.299 are volunteers was selected for generating the test data
